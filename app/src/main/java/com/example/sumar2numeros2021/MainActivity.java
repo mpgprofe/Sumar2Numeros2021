@@ -12,12 +12,15 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     final String ETIQUETA = "SUMARP";
     EditText numero1;
+    EditText numero2;
 /*
 Para los métodos de la clase heredada puedo usar Ctrol+O para hacerlo de manera automática.
 * */
     @Override
     protected void onStop() {
         super.onStop();
+        numero1.setText("0");
+        numero2.setText("0");
         Log.i(ETIQUETA, "Mi actividad se ha parado");
     }
 
@@ -41,7 +44,7 @@ Para los métodos de la clase heredada puedo usar Ctrol+O para hacerlo de manera
         Button botonSumar = findViewById(R.id.botonSumar);
         Button restar = findViewById(R.id.buttonRestar);
         numero1 = findViewById(R.id.editTextNumber);
-        EditText numero2 = findViewById(R.id.editTextNumber2);
+        numero2 = findViewById(R.id.editTextNumber2);
         TextView resultado = findViewById(R.id.textView);
 /*
         botonSumar.setOnClickListener(new View.OnClickListener() {
