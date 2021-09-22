@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity  {
         EditText numero1 = findViewById(R.id.editTextNumber);
         EditText numero2 = findViewById(R.id.editTextNumber2);
         TextView resultado = findViewById(R.id.textView);
-
+/*
         botonSumar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -29,8 +29,22 @@ public class MainActivity extends AppCompatActivity  {
                 resultado.setText("La suma de "+n1+" + "+n2 +" = "+suma);
             }
         });
+*/
+        botonSumar.setOnClickListener(this);
 
 
+    }
 
+    @Override
+    public void onClick(View view) {
+        if (view.getId()==R.id.botonSumar) {
+            EditText numero1 = findViewById(R.id.editTextNumber);
+            EditText numero2 = findViewById(R.id.editTextNumber2);
+            TextView resultado = findViewById(R.id.textView);
+            int n1 = Integer.parseInt(numero1.getText().toString());
+            int n2 = Integer.parseInt(numero2.getText().toString());
+            int suma = n1 + n2;
+            resultado.setText("La suma de " + n1 + " + " + n2 + " = " + suma);
+        }
     }
 }
